@@ -1,0 +1,1154 @@
+/* ================================================================
+   SCOMAR — Scomberomorus Marine
+   Official Landing Page Stylesheet
+   Theme: Marine Conservation, Ocean Intelligence & Sustainable Fisheries
+   Typography: Plus Jakarta Sans
+   ================================================================ */
+
+:root {
+    /* Color Palette */
+    --deep-navy: #142233;
+    --deep-navy-dark: #0d1722;
+    --navy-surface: #1e2d3d;
+    --ocean-blue: #176b87;
+    --ocean-light: #2482a6;
+    --ocean-pale: rgba(23, 107, 135, 0.08);
+    --teal-accent: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: rgba(13, 148, 136, 0.08);
+    --sand-accent: #e6d5b8;
+    --sand-light: #f4efea;
+    --sand-tint: #faf7f2;
+    --merlot: #73343a;
+    --merlot-light: #8e444b;
+    --white: #ffffff;
+
+    /* Neutral / Text */
+    --text-dark: #1e293b;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+
+    /* Backgrounds & Borders */
+    --bg-page: #f8fafc;
+    --bg-surface: #ffffff;
+    --border-subtle: #e2e8f0;
+    --border-hover: #cbd5e1;
+
+    /* Layout */
+    --container-max: 1240px;
+    --nav-height: 76px;
+    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --card-radius: 12px;
+    --card-shadow:
+        0 4px 20px -2px rgba(20, 34, 51, 0.06),
+        0 2px 6px -1px rgba(20, 34, 51, 0.03);
+    --card-shadow-hover:
+        0 16px 36px -4px rgba(20, 34, 51, 0.12),
+        0 6px 12px -2px rgba(20, 34, 51, 0.04);
+}
+
+/* ── Reset & Base Styles ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family:
+        "Plus Jakarta Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-page);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ── 1. Navigation Bar ─────────────────────────────────────────── */
+.landing-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    background: transparent;
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        height 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.landing-nav.scrolled {
+    background: rgba(20, 34, 51, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: 68px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-brand-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+    font-size: 10px;
+    font-weight: 500;
+    color: #a5b8d0;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.88);
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #14b8a6;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-nav-login {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    transition: var(--transition);
+}
+
+.btn-nav-login:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn-nav-register {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 9px 20px;
+    border-radius: 6px;
+    background: #176b87;
+    border: 1px solid #176b87;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(23, 107, 135, 0.3);
+}
+
+.btn-nav-register:hover {
+    background: #1b7f9f;
+    border-color: #1b7f9f;
+    box-shadow: 0 4px 12px rgba(23, 107, 135, 0.45);
+    transform: translateY(-1px);
+}
+
+.btn-nav-dashboard {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 9px 22px;
+    border-radius: 6px;
+    background: #73343a;
+    border: 1px solid #8e444b;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(115, 52, 58, 0.3);
+}
+
+.btn-nav-dashboard:hover {
+    background: #8e444b;
+    box-shadow: 0 4px 14px rgba(115, 52, 58, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    padding: 6px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: #142233;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    padding: 24px;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 999;
+}
+
+.mobile-drawer.open {
+    display: flex;
+}
+
+.mobile-drawer .nav-link {
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-drawer .nav-auth {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.mobile-drawer .btn-nav-login,
+.mobile-drawer .btn-nav-register,
+.mobile-drawer .btn-nav-dashboard {
+    width: 100%;
+    text-align: center;
+    padding: 11px;
+}
+
+/* ── 2. Hero Section ───────────────────────────────────────────── */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--deep-navy);
+    background-image: url("../images/landing/hero-pulau-tunda.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 120px 0 80px;
+    overflow: hidden;
+}
+
+/* Gradient Overlay - Dark navy to oceanic transparent with bottom contrast */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(13, 23, 34, 0.62) 0%,
+        rgba(20, 34, 51, 0.42) 45%,
+        rgba(13, 23, 34, 0.84) 85%,
+        #0d1722 100%
+    );
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e2edf7;
+    background: rgba(13, 23, 34, 0.5);
+    border: 1px solid rgba(165, 184, 208, 0.45);
+    border-radius: 30px;
+    padding: 6px 18px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.8s ease backwards;
+}
+
+.hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin-bottom: 22px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+    animation: slideUp 0.8s ease backwards 0.15s;
+}
+
+.hero-description {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(245, 245, 242, 0.92);
+    margin: 0 auto 36px;
+    max-width: 820px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    animation: slideUp 0.8s ease backwards 0.3s;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: slideUp 0.8s ease backwards 0.45s;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #176b87;
+    border: 1px solid #176b87;
+    padding: 13px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.2px;
+    box-shadow: 0 4px 16px rgba(23, 107, 135, 0.4);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: #1f7c9c;
+    border-color: #1f7c9c;
+    box-shadow: 0 6px 22px rgba(23, 107, 135, 0.55);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 13px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.2px;
+    backdrop-filter: blur(6px);
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-dashboard-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #73343a;
+    border: 1px solid #8e444b;
+    padding: 13px 34px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(115, 52, 58, 0.4);
+    transition: var(--transition);
+}
+
+.btn-dashboard-hero:hover {
+    background: #8e444b;
+    box-shadow: 0 6px 22px rgba(115, 52, 58, 0.55);
+    transform: translateY(-2px);
+}
+
+.hero-attribution {
+    position: absolute;
+    bottom: 18px;
+    right: 28px;
+    z-index: 3;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.3px;
+    max-width: 420px;
+    text-align: right;
+    pointer-events: none;
+    line-height: 1.4;
+}
+
+/* ── 3. Section Header Component ───────────────────────────────── */
+.section-header {
+    text-align: center;
+    max-width: 840px;
+    margin: 0 auto 52px;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ocean-blue);
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--deep-navy);
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    margin-bottom: 16px;
+}
+
+.section-desc {
+    font-size: 15.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0 auto;
+}
+
+/* ── 4. Dua Kartu Informasi Utama ──────────────────────────────── */
+.cards-section {
+    padding: 96px 0 108px;
+    background: #f8fafc;
+    position: relative;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    align-items: stretch;
+}
+
+.info-card {
+    background: var(--bg-surface);
+    border-radius: var(--card-radius);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: #cbd5e1;
+}
+
+/* Card Visual Header */
+.card-media {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    background: #142233;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.info-card:hover .card-image {
+    transform: scale(1.04);
+}
+
+.card-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(20, 34, 51, 0.1) 0%,
+        rgba(20, 34, 51, 0.65) 100%
+    );
+    pointer-events: none;
+}
+
+.card-category-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: rgba(20, 34, 51, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-photo-note {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    z-index: 2;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.2px;
+}
+
+/* Card Content Body */
+.card-body {
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-header-group {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--deep-navy);
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
+
+.card-scientific-name {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--ocean-blue);
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.card-location-meta {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Structured Aspects List */
+.card-aspects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.aspect-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.aspect-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ocean-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.aspect-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.62;
+    text-align: justify;
+}
+
+/* ── 5. Platform Capabilities Overview ─────────────────────────── */
+.overview-section {
+    padding: 84px 0;
+    background: #ffffff;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.overview-card {
+    background: #f8fafc;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 24px 20px;
+    transition: var(--transition);
+}
+
+.overview-card:hover {
+    border-color: var(--ocean-blue);
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(23, 107, 135, 0.08);
+    transform: translateY(-3px);
+}
+
+.overview-number {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--ocean-blue);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.overview-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--deep-navy);
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.overview-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ── 6. Call to Action (CTA) Section ───────────────────────────── */
+.cta-section {
+    padding: 72px 0;
+    background: linear-gradient(135deg, #142233 0%, #176b87 100%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.cta-box {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.cta-desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.65;
+    margin-bottom: 28px;
+}
+
+.cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ── 7. Footer ─────────────────────────────────────────────────── */
+.landing-footer {
+    background: #0d1722;
+    color: #a5b8d0;
+    padding: 60px 0 36px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.footer-brand-sub {
+    font-size: 12px;
+    font-weight: 500;
+    color: #14b8a6;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand-desc {
+    font-size: 13px;
+    color: rgba(165, 184, 208, 0.85);
+    line-height: 1.65;
+    max-width: 480px;
+}
+
+.footer-col-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-list a {
+    font-size: 13px;
+    color: #a5b8d0;
+    transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 28px;
+    font-size: 12.5px;
+    color: rgba(165, 184, 208, 0.65);
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.footer-affiliation {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 480px;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── 8. Keyframes & Animation ──────────────────────────────────── */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll reveal utility - Progressive enhancement (always visible by default) */
+.reveal-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-init .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.reveal-init .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ── 9. Responsive Breakpoints ─────────────────────────────────── */
+/* Navbar: rapatkan jarak menu pada layar laptop kecil */
+@media (max-width: 1280px) {
+    .nav-links {
+        gap: 22px;
+    }
+}
+
+/* Navbar: beralih ke menu hamburger lebih awal agar menu desktop tidak sesak/terpecah */
+@media (max-width: 1100px) {
+    .nav-links,
+    .nav-auth {
+        display: none;
+    }
+    .mobile-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-description {
+        font-size: 16px;
+    }
+    .cards-grid {
+        gap: 28px;
+    }
+    .card-media {
+        height: 250px;
+    }
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-brand-col {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 64px;
+    }
+    .nav-links,
+    .nav-auth {
+        display: none;
+    }
+    .mobile-toggle {
+        display: flex;
+    }
+    .hero-section {
+        padding: 95px 0 45px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-container {
+        padding-bottom: 0;
+        width: 100%;
+    }
+    .hero-title {
+        font-size: 26px;
+        line-height: 1.25;
+        margin-bottom: 16px;
+    }
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+    .btn-primary,
+    .btn-outline,
+    .btn-dashboard-hero {
+        padding: 12px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .hero-attribution {
+        position: static;
+        margin-top: 24px;
+        font-size: 10.5px;
+        color: rgba(255, 255, 255, 0.65);
+        max-width: 90%;
+        text-align: center;
+        line-height: 1.45;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .card-media {
+        height: 230px;
+    }
+    .card-body {
+        padding: 24px 20px;
+    }
+    .section-title {
+        font-size: 25px;
+    }
+    .section-desc {
+        font-size: 14px;
+    }
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .footer-brand-col {
+        grid-column: span 1;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    .hero-section {
+        padding: 80px 0 32px;
+    }
+    .hero-tag {
+        font-size: 10px;
+        padding: 4px 12px;
+        margin-bottom: 14px;
+        letter-spacing: 1px;
+    }
+    .hero-title {
+        font-size: 22px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+        margin-bottom: 14px;
+    }
+    .hero-description {
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+    .section-title {
+        font-size: 21px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+    }
+    .section-desc {
+        font-size: 13.5px;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+    .card-media {
+        height: 200px;
+    }
+    .card-photo-note {
+        font-size: 9px;
+        max-width: 85%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .card-category-badge {
+        font-size: 9.5px;
+        padding: 3px 8px;
+    }
+    .aspect-label {
+        font-size: 12px;
+    }
+    .aspect-text {
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: left;
+    }
+    .cta-box {
+        padding: 36px 18px;
+    }
+    .cta-title {
+        font-size: 21px;
+    }
+    .cta-desc {
+        font-size: 13.5px;
+    }
+    .cta-actions .btn-primary,
+    .cta-actions .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-brand-title {
+        font-size: 18px;
+    }
+    .footer-brand-desc {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 20px;
+    }
+    .section-title {
+        font-size: 19px;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .card-body {
+        padding: 18px 14px;
+    }
+}

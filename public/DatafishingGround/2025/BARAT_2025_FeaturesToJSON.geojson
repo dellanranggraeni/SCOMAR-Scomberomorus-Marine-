@@ -1,0 +1,4 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [{"type":"Feature","id":1,"geometry":{"type":"MultiPoint","coordinates":[[106.33981409370222,-5.8256834587722892]]},"properties":{"OBJECTID":1,"FID_Contour_CHLJAN25":null,"Id":0,"Contour":0,"FID_Contour_Idw_SST1":null,"Id_1":0,"Contour_1":0}},{"type":"Feature","id":2,"geometry":{"type":"MultiPoint","coordinates":[[106.27824637990642,-5.7852355866826315]]},"properties":{"OBJECTID":2,"FID_Contour_CHLJAN25":null,"Id":0,"Contour":0,"FID_Contour_Idw_SST1":null,"Id_1":0,"Contour_1":0}}]
+}

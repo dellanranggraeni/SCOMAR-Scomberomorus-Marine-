@@ -1,0 +1,4 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [{"type":"Feature","id":1,"geometry":{"type":"MultiPoint","coordinates":[[106.20959201965184,-5.8514196165442058]]},"properties":{"OBJECTID":1,"FID_Contour_CHLDES23":null,"Id":2,"Contour":2,"FID_Contour_SSTDES23":null,"Id_1":1,"Contour_1":30}},{"type":"Feature","id":2,"geometry":{"type":"MultiPoint","coordinates":[[106.20740994095667,-5.8336427889287847]]},"properties":{"OBJECTID":2,"FID_Contour_CHLDES23":null,"Id":3,"Contour":1.5,"FID_Contour_SSTDES23":null,"Id_1":1,"Contour_1":30}},{"type":"Feature","id":3,"geometry":{"type":"MultiPoint","coordinates":[[106.2077419870518,-5.8144004508227454]]},"properties":{"OBJECTID":3,"FID_Contour_CHLDES23":null,"Id":5,"Contour":1,"FID_Contour_SSTDES23":null,"Id_1":1,"Contour_1":30}}]
+}

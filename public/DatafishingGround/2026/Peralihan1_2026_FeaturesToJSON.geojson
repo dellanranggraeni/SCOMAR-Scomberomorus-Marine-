@@ -1,0 +1,4 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [{"type":"Feature","id":1,"geometry":{"type":"MultiPoint","coordinates":[[106.31521892777164,-5.7808358273635463]]},"properties":{"OBJECTID":1,"FID_Contour_CHLFEB26":null,"Id":5,"Contour":0.69999999999999996,"FID_Contour_SSTFEB26":null,"Id_1":4,"Contour_1":30.5}}]
+}
