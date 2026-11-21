@@ -40,12 +40,12 @@ class InitialScomarDataSeeder extends Seeder
         // 2. Parameter Oseanografi
         if (OceanographicParameter::count() === 0) {
             $ocean = [
-                ['year' => '2021', 'temp' => 28.75, 'chlorophyll' => 0.62, 'tss' => 16.40, 'current' => 0.28, 'status' => 'Normal / Subur',         'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Validasi In-situ UPI'],
-                ['year' => '2022', 'temp' => 29.10, 'chlorophyll' => 0.74, 'tss' => 15.20, 'current' => 0.31, 'status' => 'Subur',                  'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Validasi In-situ UPI'],
-                ['year' => '2023', 'temp' => 29.80, 'chlorophyll' => 0.91, 'tss' => 14.80, 'current' => 0.35, 'status' => 'Sangat Subur (Upwelling)', 'habitat_score' => 'Sangat Baik', 'source' => 'Satelit Aqua MODIS & Validasi In-situ UPI'],
-                ['year' => '2024', 'temp' => 29.40, 'chlorophyll' => 0.82, 'tss' => 15.60, 'current' => 0.30, 'status' => 'Subur / Stabil',          'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Validasi In-situ UPI'],
-                ['year' => '2025', 'temp' => 30.20, 'chlorophyll' => 1.05, 'tss' => 13.90, 'current' => 0.42, 'status' => 'Puncak Kesuburan',        'habitat_score' => 'Sangat Baik', 'source' => 'Satelit Aqua MODIS & Validasi In-situ UPI'],
-                ['year' => '2026', 'temp' => 29.60, 'chlorophyll' => 0.88, 'tss' => 14.20, 'current' => 0.35, 'status' => 'Subur / Optimal',         'habitat_score' => 'Optimal',     'source' => 'Pemantauan Terkini SCOMAR UPI'],
+                ['year' => '2021', 'temp' => 28.75, 'chlorophyll' => 0.62, 'tss' => 16.40, 'current' => 0.28, 'status' => 'Normal / Subur',         'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Copernicus Marine Service'],
+                ['year' => '2022', 'temp' => 29.10, 'chlorophyll' => 0.74, 'tss' => 15.20, 'current' => 0.31, 'status' => 'Subur',                  'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Copernicus Marine Service'],
+                ['year' => '2023', 'temp' => 29.80, 'chlorophyll' => 0.91, 'tss' => 14.80, 'current' => 0.35, 'status' => 'Sangat Subur (Upwelling)', 'habitat_score' => 'Sangat Baik', 'source' => 'Satelit Aqua MODIS & Copernicus Marine Service'],
+                ['year' => '2024', 'temp' => 29.40, 'chlorophyll' => 0.82, 'tss' => 15.60, 'current' => 0.30, 'status' => 'Subur / Stabil',          'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Copernicus Marine Service'],
+                ['year' => '2025', 'temp' => 30.20, 'chlorophyll' => 1.05, 'tss' => 13.90, 'current' => 0.42, 'status' => 'Puncak Kesuburan',        'habitat_score' => 'Sangat Baik', 'source' => 'Satelit Aqua MODIS & Copernicus Marine Service'],
+                ['year' => '2026', 'temp' => 29.60, 'chlorophyll' => 0.88, 'tss' => 14.20, 'current' => 0.35, 'status' => 'Subur / Optimal',         'habitat_score' => 'Optimal',     'source' => 'Satelit Aqua MODIS & Copernicus Marine Service'],
             ];
             foreach ($ocean as $o) {
                 OceanographicParameter::create($o);
