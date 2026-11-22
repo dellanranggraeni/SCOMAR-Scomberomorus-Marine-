@@ -8,9 +8,7 @@ use Illuminate\Http\Client\ConnectionException;
 
 class ScannerController extends Controller
 {
-    /**
-     * Menampilkan halaman pemindai ikan.
-     */
+    /** Menampilkan halaman pemindai ikan. */
     public function index()
     {
         return view('scanner.index', [
@@ -19,10 +17,7 @@ class ScannerController extends Controller
         ]);
     }
 
-    /**
-     * Mengirim tiga foto ke FastAPI untuk divalidasi
-     * dan diprediksi oleh model AI SCOMAR.
-     */
+    /** Mengirim tiga foto ke FastAPI untuk divalidasi dan diprediksi oleh model AI SCOMAR. */
     public function predict(Request $request)
     {
         // Validasi foto yang diunggah
@@ -61,9 +56,7 @@ class ScannerController extends Controller
 
                 ->post('http://127.0.0.1:8001/predict/pemindaian');
 
-            // ======================================
-            // 1. PENANGANAN GAMBAR TIDAK SESUAI
-            // ======================================
+            // 1. PENANGANAN GAMBAR TIDAK SESUAI //
 
             if ($response->status() === 422) {
 
@@ -86,9 +79,7 @@ class ScannerController extends Controller
                     ->with('scan_result', null);
             }
 
-            // ======================================
-            // 2. PENANGANAN KEGAGALAN AI SERVICE
-            // ======================================
+            // 2. PENANGANAN KEGAGALAN AI SERVICE // 
 
             if (!$response->successful()) {
 
@@ -100,12 +91,9 @@ class ScannerController extends Controller
                     ->with('validation_result', null);
             }
 
-            // ======================================
-            // 3. PEMINDAIAN BERHASIL
-            // ======================================
+            // 3. PEMINDAIAN BERHASIL //
 
             $hasil = $response->json();
-
             return redirect()
                 ->route('scanner.index')
                 ->with('scan_result', $hasil)
