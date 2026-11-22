@@ -1,11 +1,4 @@
-{{-- ================================================================
-     DASHBOARD SCOMAR
-     File: resources/views/dashboard/index.blade.php
-
-     Mendukung penuh Mode Cerah dan Mode Gelap dengan palet SCOMAR,
-     kartu ringkasan interaktif, peta Leaflet.js dinamis dari database,
-     serta integrasi CRUD Fishing Ground, Terumbu Karang, dan Alat Tangkap.
-================================================================ --}}
+﻿{{-- DASHBOARD SCOMAR--}}
 
 @extends('layouts.app')
 
@@ -19,7 +12,7 @@
 @section('content')
 
 <style>
-    /* ── MODERN MARINE DASHBOARD THEME & ELEVATED SURFACES ─────────── */
+    /* MODERN MARINE DASHBOARD THEME & ELEVATED SURFACES */
     .dashboard-hero {
         background: var(--bg-surface);
         border-radius: 16px;
@@ -312,7 +305,7 @@
         line-height: 1.45;
     }
 
-    /* ── ELEVATED STAT CARDS ───────────────────────────────────────── */
+    /* ELEVATED STAT CARDS */
     .status-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -464,7 +457,7 @@
     .dot-chla   { background: #0891B2; }
     .dot-grounds{ background: #059669; }
 
-    /* ── PETA INTERAKTIF LEAFLET WEBGIS ──────────────────────────── */
+    /* PETA INTERAKTIF LEAFLET WEBGIS */
     .map-placeholder {
         background: var(--bg-surface);
         border-radius: 16px;
@@ -625,147 +618,6 @@
         to { transform: rotate(360deg); }
     }
 
-    /* Modern Map Filter Control */
-    .zppi-map-filter-control {
-        background: var(--bg-surface);
-        padding: 10px 14px;
-        border-radius: 10px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-        border: 1px solid var(--border-subtle);
-        min-width: 220px;
-        font-family: inherit;
-    }
-
-    [data-theme="dark"] .zppi-map-filter-control {
-        background: #1B293A;
-        border-color: rgba(165, 184, 208, 0.25);
-    }
-
-    .zmfc-title {
-        font-size: 11px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.6px;
-        color: var(--text-primary);
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .zmfc-select-group {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    .zmfc-select {
-        width: 100%;
-        padding: 6px 10px;
-        border-radius: 6px;
-        border: 1px solid var(--border-subtle);
-        background: var(--bg-body);
-        color: var(--text-primary);
-        font-size: 12px;
-        font-weight: 600;
-        outline: none;
-        cursor: pointer;
-    }
-
-    [data-theme="dark"] .zmfc-select {
-        background: #141F2B;
-        border-color: rgba(165, 184, 208, 0.2);
-        color: #F8FAFC;
-    }
-
-    .zmfc-select:focus {
-        border-color: #0284c7;
-    }
-
-    /* Dynamic Map Legend */
-    .scomar-map-legend {
-        background: var(--bg-surface);
-        padding: 12px 16px;
-        border-radius: 10px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-        border: 1px solid var(--border-subtle);
-        font-family: inherit;
-        font-size: 11.5px;
-        color: var(--text-primary);
-        line-height: 1.5;
-        min-width: 210px;
-    }
-
-    [data-theme="dark"] .scomar-map-legend {
-        background: #1B293A;
-        border-color: rgba(165, 184, 208, 0.25);
-        color: #F8FAFC;
-    }
-
-    .sml-header {
-        font-size: 10.5px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
-        color: var(--text-muted);
-        margin-bottom: 8px;
-        border-bottom: 1px solid var(--border-subtle);
-        padding-bottom: 4px;
-    }
-
-    .sml-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 6px;
-    }
-
-    .sml-icon-wrapper {
-        width: 22px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .sml-dot-coral {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #A5B8D0;
-        border: 2px solid #FFFFFF;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    }
-
-    .sml-dot-fg {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #73343A;
-        border: 2px solid #FFFFFF;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    }
-
-    .sml-text-main {
-        font-weight: 700;
-        color: var(--text-primary);
-        font-size: 11.5px;
-        line-height: 1.2;
-    }
-
-    .sml-text-sub {
-        font-size: 10px;
-        color: var(--text-muted);
-    }
-
-    .sml-source {
-        font-size: 9.5px;
-        color: var(--text-muted);
-        border-top: 1px dashed var(--border-subtle);
-        padding-top: 6px;
-        margin-top: 6px;
-        line-height: 1.35;
-    }
 
     /* Pop-up Marker Modern */
     .leaflet-popup-content-wrapper {
@@ -871,9 +723,7 @@
         display: inline-block;
     }
 
-    /* ============================================================
-       SCOMAR ZPPI & FISHING GEAR RECOMMENDATION POPUP
-    ============================================================ */
+    /* SCOMAR ZPPI & FISHING GEAR RECOMMENDATION POPUP */
     .scomar-zppi-rec-popup .leaflet-popup-content {
         margin: 10px 12px !important;
         max-width: 370px !important;
@@ -1179,7 +1029,7 @@
         color: #F8FAFC;
     }
 
-    /* ── TABS KELOLA DATA PEMETAAN & EKOSISTEM ─────────────────────── */
+    /* TABS KELOLA DATA PEMETAAN & EKOSISTEM */
     .crud-section-card {
         background: var(--bg-surface);
         border-radius: 16px;
@@ -1255,17 +1105,13 @@
         color: var(--deep-navy);
     }
 
-    /* ================================================================
-       RESPONSIVE DASHBOARD SCOMAR
-    ================================================================ */
-
+    /* RESPONSIVE DASHBOARD SCOMAR */
     /* Peta responsif */
     @media (max-width: 1024px) {
         #scomarMap {
             height: 480px;
         }
     }
-
     @media (max-width: 768px) {
         #scomarMap {
             height: 400px;
@@ -1278,7 +1124,6 @@
             font-size: 12.5px;
         }
     }
-
     @media (max-width: 640px) {
         #scomarMap {
             height: 360px;
@@ -1313,18 +1158,12 @@
             padding: 1px 6px;
         }
     }
-
     @media (max-width: 480px) {
         #scomarMap {
             height: 320px;
         }
         .scomar-control-panel {
             font-size: 10.5px !important;
-        }
-        .scomar-map-legend {
-            font-size: 10.5px !important;
-            min-width: 150px !important;
-            padding: 8px 10px !important;
         }
         .crud-nav-tabs {
             overflow-x: auto;
@@ -1338,7 +1177,6 @@
             font-size: 11px;
         }
     }
-
     @media (max-width: 380px) {
         #scomarMap {
             height: 290px;
@@ -1373,10 +1211,183 @@
             height: 28px;
         }
     }
+        /* ── Hero ringkas ── */
+        .dashboard-hero { padding: 20px 24px; margin-bottom: 18px; }
+        .hero-top-row { margin-bottom: 0; }
+        .hero-main-title { font-size: 21px; }
+
+        .hero-modules-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: inherit;
+            color: var(--text-secondary);
+            background: rgba(165, 184, 208, 0.1);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .hero-modules-toggle:hover { color: var(--text-primary); border-color: var(--border-hover); }
+        .hero-modules-toggle .chev { transition: transform 0.2s ease; }
+        .hero-modules-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+        .hero-features-grid {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* ── Label konteks filter di atas kartu statistik ── */
+        .stat-context-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 0 0 12px 0;
+            padding: 8px 14px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: rgba(2, 132, 199, 0.07);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            border-radius: 10px;
+        }
+        .stat-context-bar strong { color: var(--text-primary); }
+        .stat-context-link {
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            font-weight: 700;
+            color: #0284c7;
+            cursor: pointer;
+        }
+        .stat-context-link:hover { text-decoration: underline; }
+            [data-theme="dark"] .stat-context-bar {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.25);
+        }
+        [data-theme="dark"] .stat-context-link { color: #38bdf8; }
+
+        /* ── Panel kontrol peta yang bisa dilipat ── */
+        .scomar-panel-toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: none;
+            border: 0;
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            cursor: pointer;
+            text-align: left;
+        }
+        .scomar-panel-toggle .chev { transition: transform 0.2s ease; flex-shrink: 0; }
+        .scomar-panel-toggle[aria-expanded="false"] .chev { transform: rotate(-90deg); }
+        .scomar-panel-body { margin-top: 8px; }
+        .scomar-panel-body[hidden] { display: none; }
+        .scomar-legend-section + .scomar-legend-section {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed rgba(165, 184, 208, 0.35);
+        }
+
+        /* Tombol bawaan Leaflet ikut mode gelap (zoom, reset, fullscreen) */
+        [data-theme="dark"] .leaflet-bar a {
+            background: #1B293A;
+            color: #F8FAFC;
+            border-bottom-color: rgba(165, 184, 208, 0.25);
+        }
+        [data-theme="dark"] .leaflet-bar a:hover { background: #24364B; }
+        .leaflet-bar a.scomar-tool-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* ── Fullscreen peta ── */
+        .map-wrapper-box.is-fullscreen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            border-radius: 0;
+            background: var(--bg-surface);
+        }
+        .map-wrapper-box.is-fullscreen #scomarMap {
+            height: 100vh;
+            border-radius: 0;
+            border: none;
+        }
+        body.map-fs-lock { overflow: hidden; }
+
+        /* ── Pin ZPPI kecil; membesar + berlabel saat zoom dekat ── */
+        .zppi-pin-label { display: none; }
+        .map-zoom-high .zppi-pin-label { display: inline; }
+        .map-zoom-high .zppi-pin-dot { display: none; }
+
+        /* Leaflet memosisikan marker lewat transform pada elemen ikon, jadi efek hover harus dipasang pada <svg> di dalamnya. */
+        .zppi-custom-marker svg {
+            transition: transform 0.2s ease;
+            transform-origin: 50% 100%;
+        }
+        .zppi-custom-marker:hover { transform: none; }
+        .zppi-custom-marker:hover svg { transform: scale(1.15); }
+        .map-zoom-high .zppi-custom-marker svg { transform: scale(1.4); }
+        .map-zoom-high .zppi-custom-marker:hover svg { transform: scale(1.55); }
+
+        /* ── Popup ZPPI ringkas ── */
+        .scomar-zppi-rec-popup .leaflet-popup-content { max-width: 340px !important; }
+        .scomar-zppi-popup { max-width: 330px; }
+        .szp-summary {
+            margin-top: 8px;
+            padding: 7px 9px;
+            font-size: 11.5px;
+            line-height: 1.45;
+            color: var(--text-primary);
+            background: rgba(165, 184, 208, 0.1);
+            border-radius: 7px;
+        }
+        .szp-detail-toggle {
+            width: 100%;
+            margin-top: 8px;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: inherit;
+            color: #0284c7;
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.28);
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .szp-detail-toggle:hover { background: rgba(2, 132, 199, 0.14); }
+        [data-theme="dark"] .szp-detail-toggle { color: #38bdf8; }
+        .szp-more[hidden] { display: none; }
+
+        /* Ukuran font minimum agar terbaca di layar HP */
+        .szp-spec-label, .szp-detail-label, .szp-gear-legal-badge { font-size: 10.5px; }
+        .szp-detail-text { font-size: 11.5px; }
+        .szp-tab-btn { font-size: 11px; }
+
+    :root {
+        --legend-zppi: #176B87;
+        --legend-reef: #0D9488;
+        --legend-muted: #64748B;
+    }
+    [data-theme="dark"] {
+        --legend-zppi: #5FB3CE;
+        --legend-reef: #2DD4BF;
+        --legend-muted: #94A3B8;
+    }
 </style>
 
 {{-- ── 1. HERO PENGENALAN SCOMAR & STATUS AKSES AKUN ────────────── --}}
-<div class="dashboard-hero">
+<div class="dashboard-hero" x-data="{ showModules: false }">
     <div class="hero-top-row">
         <div class="hero-text-col">
             <div class="hero-top-badge">
@@ -1423,17 +1434,26 @@
         </div>
     </div>
 
-    {{-- Grid 6 Pilar / Modul Informasi Utama SCOMAR --}}
-    <div class="hero-features-title">
+        {{-- Modul & kapabilitas SCOMAR (collapsible, default tertutup) --}}
+        <button
+            type="button"
+            class="hero-modules-toggle"
+            @click="showModules = !showModules"
+            :aria-expanded="showModules.toString()"
+            aria-controls="heroModulesGrid"
+        >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="12 2 2 7 12 12 22 7 12 2"/>
             <polyline points="2 17 12 22 22 17"/>
             <polyline points="2 12 12 17 22 12"/>
         </svg>
-        <span>Modul &amp; Kapabilitas Utama Sistem SCOMAR</span>
-    </div>
+        <span x-text="showModules ? 'Sembunyikan modul SCOMAR' : 'Lihat 6 modul & kapabilitas SCOMAR'"></span>
+        <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+        </svg>
+    </button>
 
-    <div class="hero-features-grid">
+    <div class="hero-features-grid" id="heroModulesGrid" x-show="showModules" x-transition style="display:none;">
         {{-- Modul 1: Terumbu Karang --}}
         <div class="hero-feat-card">
             <div class="feat-icon-box icon-coral-theme">
@@ -1525,7 +1545,17 @@
     </div>
 </div>
 
+{{--2. ELEVATED STAT CARDS (REAL DATABASE SCOMAR)--}}
 {{-- ── 2. ELEVATED STAT CARDS (REAL DATABASE SCOMAR) ────────────── --}}
+<div class="stat-context-bar">
+    <span>Kartu mengikuti filter peta: <strong id="statFilterLabel">2021 &bull; Tahunan</strong></span>
+    <button
+        type="button"
+        class="stat-context-link"
+        onclick="document.getElementById('scomarMap').scrollIntoView({ behavior: 'smooth', block: 'center' })"
+    >Ubah filter di peta &rarr;</button>
+</div>
+
 <div class="status-grid">
 
     {{-- Kartu 1: Total Hasil Tangkapan --}}
@@ -1628,7 +1658,7 @@
 
 </div>
 
-{{-- ── 3. PETA INTERAKTIF LEAFLET.JS WEBGIS ──────────────────────── --}}
+{{--3. PETA INTERAKTIF LEAFLET.JS WEBGIS --}}
 <div class="map-placeholder">
     <div class="map-header">
         <div class="map-header-left">
@@ -3845,14 +3875,12 @@
     const LYZENGA_CONFIG = {
         1: { color: '#0077B6', border: '#023E8A', fillOpacity: 0.32, label: 'Lautan' },
         2: { color: '#06B6D4', border: '#0891B2', fillOpacity: 0.55, label: 'Terumbu Karang Hidup' },
-        3: { color: '#10B981', border: '#059669', fillOpacity: 0.60, label: 'Rubble (Karang Mati)' },
-        4: { color: '#F59E0B', border: '#D97706', fillOpacity: 0.65, label: 'Lamun' },
-        5: { color: '#E11D48', border: '#BE123C', fillOpacity: 0.70, label: 'Pasir' }
+        3: { color: '#A8A29E', border: '#78716C', fillOpacity: 0.60, label: 'Rubble (Karang Mati)' },
+        4: { color: '#22C55E', border: '#15803D', fillOpacity: 0.60, label: 'Lamun' },
+        5: { color: '#F5E6B8', border: '#CA8A04', fillOpacity: 0.75, label: 'Pasir' }
     };
 
-    /* ============================================================
-       1. INISIALISASI PETA
-    ============================================================ */
+    /* 1. INISIALISASI PETA */
     const MAP_CENTER = [-5.8082, 106.2714];
     const MAP_ZOOM   = 13;
 
@@ -3895,9 +3923,69 @@
         { position: 'topleft', collapsed: true }
     ).addTo(map);
 
-    /* ============================================================
-       3. HELPER: DMS CONVERTER & BADGE KOORDINAT PUSAT
-    ============================================================ */
+    // Skala peta (penting karena popup menampilkan jarak dalam meter)
+    L.control.scale({ position: 'bottomright', metric: true, imperial: false }).addTo(map);
+
+    // Tombol reset view + fullscreen
+    const mapToolsControl = L.control({ position: 'topleft' });
+    mapToolsControl.onAdd = function () {
+        const bar = L.DomUtil.create('div', 'leaflet-bar');
+
+        const resetBtn = L.DomUtil.create('a', 'scomar-tool-btn', bar);
+        resetBtn.href = '#';
+        resetBtn.title = 'Kembali ke Pulau Tunda';
+        resetBtn.setAttribute('role', 'button');
+        resetBtn.setAttribute('aria-label', 'Kembali ke tampilan awal Pulau Tunda');
+        resetBtn.innerHTML =
+            '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
+            '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>';
+
+        const fsBtn = L.DomUtil.create('a', 'scomar-tool-btn', bar);
+        fsBtn.href = '#';
+        fsBtn.title = 'Layar penuh';
+        fsBtn.setAttribute('role', 'button');
+        fsBtn.setAttribute('aria-label', 'Tampilkan peta layar penuh');
+        fsBtn.innerHTML =
+            '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
+            '<path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/>' +
+            '<path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>';
+
+        const mapBox = document.querySelector('.map-wrapper-box');
+        function toggleFullscreen() {
+            if (!mapBox) return;
+            const on = mapBox.classList.toggle('is-fullscreen');
+            document.body.classList.toggle('map-fs-lock', on);
+            fsBtn.title = on ? 'Keluar dari layar penuh' : 'Layar penuh';
+            setTimeout(function () { map.invalidateSize(); }, 150);
+        }
+
+        L.DomEvent.on(resetBtn, 'click', function (e) {
+            L.DomEvent.stop(e);
+            map.flyTo(MAP_CENTER, MAP_ZOOM, { duration: 0.8 });
+        });
+        L.DomEvent.on(fsBtn, 'click', function (e) {
+            L.DomEvent.stop(e);
+            toggleFullscreen();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mapBox && mapBox.classList.contains('is-fullscreen')) {
+                toggleFullscreen();
+            }
+        });
+
+        L.DomEvent.disableClickPropagation(bar);
+        return bar;
+    };
+    mapToolsControl.addTo(map);
+
+    // Penanda zoom dekat (dipakai CSS untuk memperbesar pin & menampilkan label ZPPI)
+    function syncZoomClass() {
+        map.getContainer().classList.toggle('map-zoom-high', map.getZoom() >= 15);
+    }
+    map.on('zoomend', syncZoomClass);
+    syncZoomClass();
+
+    /* 3. HELPER: DMS CONVERTER & BADGE KOORDINAT PUSAT */
     function toDMS(deg, isLat) {
         const abs   = Math.abs(deg);
         const d     = Math.floor(abs);
@@ -3922,61 +4010,65 @@
     map.on('moveend', updateCenterBadge);
     updateCenterBadge();
 
-    /* ============================================================
-       4. IKON MARKER ZPPI (PIN TEARDROP TURQUOISE RESMI)
-    ============================================================ */
-    const zppiPinIcon = L.divIcon({
+    /* 4. IKON MARKER ZPPI (PIN TEARDROP TURQUOISE RESMI) */
+        const zppiPinIcon = L.divIcon({
         className: 'zppi-custom-marker',
         html: `
-            <svg width="44" height="54" viewBox="0 0 50 60"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M25 2 C12.3 2 2 12.3 2 25
-                       C2 41 25 58 25 58
-                       C25 58 48 41 48 25
-                       C48 12.3 37.7 2 25 2 Z"
-                    fill="#176B87"
-                    stroke="#FFFFFF"
-                    stroke-width="2.5"
-                />
-                <text
-                    x="25"
-                    y="29"
-                    text-anchor="middle"
-                    dominant-baseline="middle"
-                    font-size="12"
-                    font-weight="bold"
-                    fill="#FFFFFF">
-                    ZPPI
-                </text>
+            <svg width="30" height="38" viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25 2 C12.3 2 2 12.3 2 25 C2 41 25 58 25 58 C25 58 48 41 48 25 C48 12.3 37.7 2 25 2 Z"
+                      fill="#176B87" stroke="#FFFFFF" stroke-width="3"/>
+                <circle class="zppi-pin-dot" cx="25" cy="25" r="8" fill="#FFFFFF"/>
+                <text class="zppi-pin-label" x="25" y="29" text-anchor="middle"
+                      dominant-baseline="middle" font-size="13" font-weight="bold" fill="#FFFFFF">ZPPI</text>
             </svg>
         `,
-        iconSize: [44, 54],
-        iconAnchor: [22, 54],
-        popupAnchor: [0, -52]
+        iconSize: [30, 38],
+        iconAnchor: [15, 38],
+        popupAnchor: [0, -34]
     });
 
-    /* ============================================================
-       5. LEGENDA LYZENGA TERUMBU KARANG (BOTTOM-LEFT)
+        /* ============================================================
+       5. PANEL LEGENDA TERPADU (BOTTOM-LEFT, BISA DILIPAT)
     ============================================================ */
-    const lyzengaLegendControl = L.control({ position: 'bottomleft' });
-    let lyzengaLegendDiv = null;
+    const chevronSvg =
+        '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
+        '<polyline points="6 9 12 15 18 9"/></svg>';
 
-    lyzengaLegendControl.onAdd = function () {
-        lyzengaLegendDiv = L.DomUtil.create('div', 'scomar-control-panel');
+    const legendControl = L.control({ position: 'bottomleft' });
+    let lyzengaLegendDiv = null;
+    let zppiLegendDiv = null;
+
+    legendControl.onAdd = function () {
+        const wrap = L.DomUtil.create('div', 'scomar-control-panel');
+        wrap.style.cssText = 'padding:9px 12px; min-width:190px; max-width:240px; box-sizing:border-box;';
+
+        const toggle = L.DomUtil.create('button', 'scomar-panel-toggle', wrap);
+        toggle.type = 'button';
+        toggle.innerHTML =
+            '<span style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Legenda Peta</span>' +
+            chevronSvg;
+
+        const body = L.DomUtil.create('div', 'scomar-panel-body', wrap);
+
+        lyzengaLegendDiv = L.DomUtil.create('div', 'scomar-legend-section', body);
         lyzengaLegendDiv.id = 'lyzengaLegendContainer';
-        lyzengaLegendDiv.style.cssText = `
-            padding: 9px 12px;
-            font-size: 11px;
-            line-height: 1.5;
-            min-width: 200px;
-            max-width: 230px;
-            box-sizing: border-box;
-        `;
+
+        zppiLegendDiv = L.DomUtil.create('div', 'scomar-legend-section', body);
+        zppiLegendDiv.id = 'zppiLegendContainer';
+
+        function setOpen(open) {
+            body.hidden = !open;
+            toggle.setAttribute('aria-expanded', String(open));
+        }
+        setOpen(window.innerWidth >= 640);   // tertutup di HP
+        toggle.addEventListener('click', function () { setOpen(body.hidden); });
+
         updateLyzengaLegend('2021', []);
-        L.DomEvent.disableClickPropagation(lyzengaLegendDiv);
-        L.DomEvent.disableScrollPropagation(lyzengaLegendDiv);
-        return lyzengaLegendDiv;
+        updateZppiLegend('--', '', 0);
+
+        L.DomEvent.disableClickPropagation(wrap);
+        L.DomEvent.disableScrollPropagation(wrap);
+        return wrap;
     };
 
     function updateLyzengaLegend(year, classStats) {
@@ -3985,79 +4077,52 @@
         if (classStats && classStats.length > 0) {
             classStats.forEach(function (c) {
                 itemsHtml += `
-                    <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; margin-bottom:3px;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:4px;">
                         <div style="display:flex; align-items:center; gap:6px;">
-                            <span style="display:inline-block; width:11px; height:11px; border-radius:2px; background:${c.color}; border:1px solid ${c.border}; flex-shrink:0;"></span>
-                            <span style="font-weight:600; font-size:11px;">Kelas ${c.gridcode}</span>
+                            <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:${c.color}; border:1px solid ${c.border}; flex-shrink:0;"></span>
+                            <span style="font-weight:600; font-size:11.5px;">${c.label}</span>
                         </div>
-                        <span style="font-family:monospace; font-size:10.5px; color:#64748B;">${c.areaM2Formatted} m²</span>
+                        <span style="font-family:monospace; font-size:11px; color:var(--legend-muted,#64748B);">${c.areaM2Formatted} m²</span>
                     </div>
                 `;
             });
         } else {
-            itemsHtml = '<div style="color:#94A3B8; font-size:11px;">Memuat rincian kelas...</div>';
+            itemsHtml = '<div style="color:#94A3B8; font-size:11.5px;">Memuat rincian kelas...</div>';
         }
-
         lyzengaLegendDiv.innerHTML = `
-            <div style="font-size:10px; font-weight:800; color:#0D9488; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:5px; border-bottom:1px solid rgba(165,184,208,0.3); padding-bottom:3px;">
-                Sebaran Terumbu Karang \u2014 Lyzenga ${year}
+            <div style="font-size:11px; font-weight:800; color:var(--legend-reef,#0D9488); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:5px;">
+                Terumbu Karang \u2014 Lyzenga ${year}
             </div>
             ${itemsHtml}
         `;
     }
 
-    lyzengaLegendControl.addTo(map);
-
-    /* ============================================================
-       6. LEGENDA ZPPI (BOTTOM-RIGHT)
-    ============================================================ */
-    const zppiLegendControl = L.control({ position: 'bottomright' });
-    let zppiLegendDiv = null;
-
-    zppiLegendControl.onAdd = function () {
-        zppiLegendDiv = L.DomUtil.create('div', 'scomar-control-panel');
-        zppiLegendDiv.id = 'zppiLegendContainer';
-        zppiLegendDiv.style.cssText = `
-            padding: 9px 12px;
-            font-size: 11px;
-            line-height: 1.5;
-            min-width: 175px;
-            box-sizing: border-box;
-        `;
-        updateZppiLegend('--', '', 0);
-        L.DomEvent.disableClickPropagation(zppiLegendDiv);
-        L.DomEvent.disableScrollPropagation(zppiLegendDiv);
-        return zppiLegendDiv;
-    };
-
     function updateZppiLegend(year, seasonLabel, count) {
         if (!zppiLegendDiv) return;
         zppiLegendDiv.innerHTML = `
-            <div style="font-size:10px; font-weight:800; color:#176B87; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:5px; border-bottom:1px solid rgba(165,184,208,0.3); padding-bottom:3px;">
-                LEGENDA ZPPI
+            <div style="font-size:11px; font-weight:800; color:var(--legend-zppi,#176B87); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:5px;">
+                Zona Tangkap (ZPPI)
             </div>
             <div style="display:flex; align-items:center; gap:8px; margin-bottom:5px;">
                 <svg width="18" height="22" viewBox="0 0 50 60" style="flex-shrink:0;">
                     <path d="M25 2 C12.3 2 2 12.3 2 25 C2 41 25 58 25 58 C25 58 48 41 48 25 C48 12.3 37.7 2 25 2 Z" fill="#176B87" stroke="#FFFFFF" stroke-width="3"/>
-                    <text x="25" y="29" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="bold" fill="#FFFFFF">ZPPI</text>
+                    <circle cx="25" cy="25" r="8" fill="#FFFFFF"/>
                 </svg>
                 <div style="line-height:1.2;">
-                    <div style="font-size:11.5px; font-weight:700;">${year !== '--' ? `ZPPI ${year}` : 'ZPPI'}</div>
-                    <div style="font-size:10.5px; color:#64748B;">${seasonLabel || '-'}</div>
+                    <div style="font-size:12px; font-weight:700;">${year !== '--' ? `ZPPI ${year}` : 'ZPPI'}</div>
+                    <div style="font-size:11px; color:var(--legend-muted,#64748B);">${seasonLabel || '-'}</div>
                 </div>
             </div>
-            <div style="background:rgba(165,184,208,0.12); border-radius:4px; padding:3px 6px; font-size:10.5px; display:flex; justify-content:space-between; align-items:center;">
-                <span style="color:#64748B;">Sebaran Titik:</span>
-                <strong style="color:#176B87;">${count} Titik</strong>
+            <div style="background:rgba(165,184,208,0.12); border-radius:4px; padding:3px 6px; font-size:11px; display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:var(--legend-muted,#64748B);">Sebaran Titik:</span>
+                <strong style="color:var(--legend-zppi,#176B87);">${count} Titik</strong>
             </div>
         `;
     }
 
-    zppiLegendControl.addTo(map);
+    legendControl.addTo(map);
 
-    /* ============================================================
-       7. OVERLAY LOADING INDIKATOR
-    ============================================================ */
+    /* 7. OVERLAY LOADING INDIKATOR */
     function showMapLoading(show, text) {
         const overlay = document.getElementById('mapLoadingOverlay');
         const textEl  = document.getElementById('mapLoadingText');
@@ -4084,6 +4149,9 @@
         currentSeasonKey   = seasonKey;
         currentSeason      = seasonLabel;
         currentZppiCount   = zppiCount;
+
+        const filterLabelEl = document.getElementById('statFilterLabel');
+        if (filterLabelEl) filterLabelEl.textContent = year + ' \u2022 ' + (seasonLabel || seasonKey);
 
         // 1. Total Hasil Tangkapan (kg) — dari database catch_data
         const catchEl     = document.getElementById('statCatchValue');
@@ -4374,6 +4442,10 @@
         const contourHtml = (info.contourVal !== null && info.contourVal !== undefined && info.contourVal !== '-')
             ? ('<div class="szp-stat-row"><span style="color:var(--text-secondary);">Kontur Kedalaman:</span><strong>' + info.contourVal + ' m</strong></div>')
             : '';
+        
+        const recSummary = analysis.isNearReef
+            ? 'Utamakan Pancing Ulur &amp; Tonda. Rawai hanya boleh berupa rawai hanyut, bukan rawai dasar. '
+            : 'Pancing Ulur &amp; Tonda direkomendasikan. Rawai dapat dipakai sebagai rawai hanyut dengan syarat. ';
 
         return '<div class="scomar-zppi-popup">' +
             '<!-- Header Titik ZPPI -->' +
@@ -4423,6 +4495,12 @@
             '</div>' +
 
             '<!-- Rekomendasi 3 Alat Tangkap SCOMAR -->' +
+            '<div class="szp-summary"><strong>Ringkasan:</strong> ' + recSummary +
+                '<em>Verifikasi regulasi &amp; zonasi sebelum beroperasi.</em></div>' +
+            '<button type="button" class="szp-detail-toggle" aria-expanded="false" onclick="scomarToggleDetail(this)">' +
+                'Lihat detail rekomendasi alat tangkap' +
+            '</button>' +
+            '<div class="szp-more" hidden>' +
             '<div class="szp-gears-section">' +
                 '<div class="szp-gears-header">' +
                     '<span>Rekomendasi Alat Tangkap</span>' +
@@ -4447,8 +4525,24 @@
                     '</div>' +
                 '</div>' +
             '</div>' +
-        '</div>';
+            '</div>' +   // tutup .szp-more
+        '</div>';        // tutup .scomar-zppi-popup
     }
+
+    let openZppiPopup = null;
+    map.on('popupopen', function (e) { openZppiPopup = e.popup; });
+
+    window.scomarToggleDetail = function (btn) {
+        const root = btn.closest('.scomar-zppi-popup');
+        if (!root) return;
+        const more = root.querySelector('.szp-more');
+        if (!more) return;
+        const willOpen = more.hidden;
+        more.hidden = !willOpen;
+        btn.setAttribute('aria-expanded', String(willOpen));
+        btn.textContent = willOpen ? 'Sembunyikan detail' : 'Lihat detail rekomendasi alat tangkap';
+        if (openZppiPopup) openZppiPopup.update();   // hitung ulang ukuran popup
+    };
 
     window.scomarSelectGearTab = function (btn, gearKey) {
         const root = btn.closest('.scomar-zppi-popup');
@@ -4551,9 +4645,11 @@
                                 dmsLng: dmsLng,
                                 contourVal: contourVal
                             });
-                        }, {
-                            maxWidth: 370,
-                            minWidth: 310,
+                        }, 
+                        
+                        {
+                            maxWidth: 340,
+                            minWidth: 280,
                             className: 'scomar-custom-popup scomar-zppi-rec-popup'
                         });
                         newLayer.addLayer(marker);
@@ -4728,7 +4824,7 @@
                     // Pop-up informasi saat poligon diklik (tanpa asumsi ekologis, tanpa satuan ha yang belum tervalidasi)
                     layer.bindPopup(
                         '<div style="font-family:inherit; min-width:210px; font-size:12px; line-height:1.6;">' +
-                            '<div style="font-size:10.5px; font-weight:800; color:#0D9488; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:5px; border-bottom:1px solid rgba(165,184,208,0.3); padding-bottom:4px;">' +
+                            '<div style="font-size:10.5px; font-weight:800; color:var(--legend-reef,#0D9488); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:5px; border-bottom:1px solid rgba(165,184,208,0.3); padding-bottom:4px;">' +
                                 'Ekosistem Terumbu Karang \u2014 Lyzenga' +
                             '</div>' +
                             '<div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;">' +
@@ -4737,15 +4833,15 @@
                             '</div>' +
                             '<div style="background:rgba(165,184,208,0.08); border:1px solid rgba(165,184,208,0.25); border-radius:6px; padding:6px 10px; margin-bottom:6px;">' +
                                 '<div style="display:flex; justify-content:space-between; margin-bottom:2px;">' +
-                                    '<span style="color:#64748B;">Tahun Pengamatan:</span>' +
+                                    '<span style="color:var(--legend-muted,#64748B);">Tahun Pengamatan:</span>' +
                                     '<strong>' + year + '</strong>' +
                                 '</div>' +
                                 '<div style="display:flex; justify-content:space-between; margin-bottom:2px;">' +
-                                    '<span style="color:#64748B;">Luas Wilayah:</span>' +
-                                    '<strong style="color:#0D9488;">' + areaM2Str + ' m&sup2;</strong>' +
+                                    '<span style="color:var(--legend-muted,#64748B);">Luas Wilayah:</span>' +
+                                    '<strong style="color:var(--legend-reef,#0D9488);">' + areaM2Str + ' m&sup2;</strong>' +
                                 '</div>' +
                                 '<div style="display:flex; justify-content:space-between;">' +
-                                    '<span style="color:#64748B;">Keliling (Perimeter):</span>' +
+                                    '<span style="color:var(--legend-muted,#64748B);">Keliling (Perimeter):</span>' +
                                     '<span style="font-family:monospace; font-size:11px;">' + lengthStr + ' m</span>' +
                                 '</div>' +
                             '</div>' +
@@ -4817,15 +4913,16 @@
             box-sizing: border-box;
         `;
 
-        // Judul Utama Kontrol
-        const mainTitle = document.createElement('div');
+        // Judul Utama Kontrol (tombol lipat)
+        const mainTitle = document.createElement('button');
+        mainTitle.type = 'button';
+        mainTitle.className = 'scomar-panel-toggle';
         mainTitle.style.cssText = `
-            font-size: 10.5px; font-weight: 800; color: #176B87;
+            font-size: 11px; font-weight: 800; color: var(--legend-zppi,#176B87);
             text-transform: uppercase; letter-spacing: 0.6px;
-            margin-bottom: 8px; border-bottom: 1.5px solid rgba(165,184,208,0.3);
-            padding-bottom: 4px;
+            padding-bottom: 4px; border-bottom: 1.5px solid rgba(165,184,208,0.3);
         `;
-        mainTitle.textContent = 'Filter Layer Spasial';
+        mainTitle.innerHTML = '<span>Filter Layer Spasial</span>' + chevronSvg;
         container.appendChild(mainTitle);
 
         /* ── SEKSI 1: TERUMBU KARANG (LYZENGA) ── */
@@ -4835,11 +4932,11 @@
             margin-bottom: 4px;
         `;
         lyzHeader.innerHTML = `
-            <label style="display:flex; align-items:center; gap:6px; font-size:11px; font-weight:800; color:#0D9488; text-transform:uppercase; cursor:pointer; margin:0;">
+            <label style="display:flex; align-items:center; gap:6px; font-size:11px; font-weight:800; color:var(--legend-reef,#0D9488); text-transform:uppercase; cursor:pointer; margin:0;">
                 <input type="checkbox" id="toggleLyzengaLayer" checked style="accent-color:#0D9488; cursor:pointer;">
                 <span>Terumbu Karang</span>
             </label>
-            <span style="font-size:9.5px; background:rgba(13,148,136,0.12); color:#0D9488; font-weight:700; padding:1px 5px; border-radius:3px;">Lyzenga</span>
+            <span style="font-size:9.5px; background:rgba(13,148,136,0.12); color:var(--legend-reef,#0D9488); font-weight:700; padding:1px 5px; border-radius:3px;">Lyzenga</span>
         `;
         container.appendChild(lyzHeader);
 
@@ -4848,7 +4945,7 @@
         lyzBox.style.cssText = 'margin-bottom:8px;';
 
         const lyzYearLabel = document.createElement('div');
-        lyzYearLabel.style.cssText = 'font-size:9.5px; color:#64748B; margin-bottom:2px; font-weight:600;';
+        lyzYearLabel.style.cssText = 'font-size:9.5px; color:var(--legend-muted,#64748B); margin-bottom:2px; font-weight:600;';
         lyzYearLabel.textContent = 'TAHUN PENGAMATAN';
 
         const lyzYearSelect = document.createElement('select');
@@ -4908,11 +5005,11 @@
             margin-bottom: 4px;
         `;
         zppiHeader.innerHTML = `
-            <label style="display:flex; align-items:center; gap:6px; font-size:11px; font-weight:800; color:#176B87; text-transform:uppercase; cursor:pointer; margin:0;">
+            <label style="display:flex; align-items:center; gap:6px; font-size:11px; font-weight:800; color:var(--legend-zppi,#176B87); text-transform:uppercase; cursor:pointer; margin:0;">
                 <input type="checkbox" id="toggleZppiLayer" checked style="accent-color:#176B87; cursor:pointer;">
                 <span>Zona Tangkap</span>
             </label>
-            <span style="font-size:9.5px; background:rgba(23,107,135,0.12); color:#176B87; font-weight:700; padding:1px 5px; border-radius:3px;">ZPPI</span>
+            <span style="font-size:9.5px; background:rgba(23,107,135,0.12); color:var(--legend-zppi,#176B87); font-weight:700; padding:1px 5px; border-radius:3px;">ZPPI</span>
         `;
         container.appendChild(zppiHeader);
 
@@ -4920,7 +5017,7 @@
         zppiBox.id = 'zppiControlBox';
 
         const yearLabel = document.createElement('div');
-        yearLabel.style.cssText = 'font-size:9.5px; color:#64748B; margin-bottom:2px; font-weight:600;';
+        yearLabel.style.cssText = 'font-size:9.5px; color:var(--legend-muted,#64748B); margin-bottom:2px; font-weight:600;';
         yearLabel.textContent = 'TAHUN';
 
         const yearSelect = document.createElement('select');
@@ -4941,7 +5038,7 @@
         });
 
         const seasonLabel = document.createElement('div');
-        seasonLabel.style.cssText = 'font-size:9.5px; color:#64748B; margin-bottom:2px; font-weight:600;';
+        seasonLabel.style.cssText = 'font-size:9.5px; color:var(--legend-muted,#64748B); margin-bottom:2px; font-weight:600;';
         seasonLabel.textContent = 'MUSIM';
 
         const seasonSelect = document.createElement('select');
@@ -5017,6 +5114,21 @@
                 });
             }
         }, 100);
+
+        // Bungkus semua isi (selain judul) agar bisa dilipat
+        const panelBody = document.createElement('div');
+        panelBody.className = 'scomar-panel-body';
+        Array.from(container.children).forEach(function (child) {
+            if (child !== mainTitle) panelBody.appendChild(child);
+        });
+        container.appendChild(panelBody);
+
+        function setFilterOpen(open) {
+            panelBody.hidden = !open;
+            mainTitle.setAttribute('aria-expanded', String(open));
+        }
+        setFilterOpen(window.innerWidth >= 640);   // tertutup di HP
+        mainTitle.addEventListener('click', function () { setFilterOpen(panelBody.hidden); });
 
         L.DomEvent.disableClickPropagation(container);
         L.DomEvent.disableScrollPropagation(container);
