@@ -267,10 +267,11 @@
             <p>
                 <strong>
                     <span style="text-align: justify; display: block;">
-                        Website Cerdas dalam Melakukan Pemantauan Ekosistem dan Hasil Tangkapan Scomberomus di Pulau Tunda</strong>.
-                        Platform digital kelautan dan perikanan terpadu yang mengintegrasikan sistem pemantauan fishing ground, analisis hasil tangkapan,
+                        Platform Digital dalam Melakukan Pemantauan Ekosistem dan Hasil Tangkapan Scomberomus commerson di Pulau Tunda</strong>
+                        
+                        Platform digital kelautan dan perikanan terpadu yang mengintegrasikan sistem pemantauan zona potensi penangkapan ikan (ZPPI), analisis hasil tangkapan,
                         analisis parameter oseanografi, hubungan parameter oseanografi dengan CPUE (Catch Per Unit Effort) 
-                        serta teknologi kecerdasan buatan yang diterapkan dengan alat pendeteksi tingkat kesegaran dan identifikasi genus ikan.
+                        serta teknologi kecerdasan buatan yang diterapkan dengan alat pendeteksi tingkat kesegaran dan identifikasi genus ikan Scomberomorus atau Non-Scomberomorus.
                     </span>
             </p>
         </div>
@@ -302,10 +303,10 @@
         <div class="editable-box">
             <span class="editable-tag">Latar Belakang Project SCOMAR</span>
             <p>
-                Pulau Tunda merupakan salah satu pulau di Kabupaten Serang, Provinsi Banten yang memiliki potensi sumber daya perikanan pelagis yang melimpah, khususnya ikan tenggiri (<em>Scomberomorus</em> spp.). Keberlanjutan ekosistem laut dan terumbu karang di kawasan ini memerlukan pemantauan berkala yang efektif, terukur, dan berbasis data ilmiah.
+                Pulau Tunda merupakan salah satu pulau di Kabupaten Serang, Provinsi Banten yang memiliki potensi sumber daya perikanan pelagis yang melimpah, khususnya ikan tenggiri (<em>Scomberomorus</em> commerson). Keberlanjutan ekosistem laut dan terumbu karang di kawasan ini memerlukan pemantauan berkala yang efektif, terukur, dan berbasis data ilmiah.
             </p>
             <p style="margin-top: 12px;">
-                SCOMAR dikembangkan sebagai solusi digital cerdas untuk membantu nelayan, peneliti, mahasiswa, serta pengambil kebijakan dalam melakukan pemantauan wilayah tangkapan (fishing ground), memahami kondisi oseanografi perairan, serta dapat mengetahui tingkat kesegaran dan identifikasi genus hasil tangkapan nelayan secara berkelanjutan.
+                SCOMAR dikembangkan sebagai solusi digital cerdas untuk membantu nelayan, peneliti, mahasiswa, serta pengambil kebijakan dalam melakukan pemantauan zona potensi penangkapan ikan (ZPPI), memahami kondisi oseanografi perairan, serta dapat mengetahui tingkat kesegaran dan identifikasi genus Scomberomorus atau Non-Scomberomorus hasil tangkapan nelayan secara berkelanjutan.
             </p>
             <!-- Anda bisa menambahkan paragraf baru di sini -->
         </div>
@@ -338,7 +339,7 @@
                 <div class="info-row">
                     <strong>Fokus Riset:</strong>
                     <span style="text-align: justify; display: block;">
-                        Fokus riset SCOMAR adalah pengembangan sistem WebGIS terintegrasi AI untuk memetakan sebaran ekosistem terumbu karang, 
+                        Fokus riset SCOMAR adalah perancangan dan pengembangan sistem WebGIS yang terintegrasi AI untuk memetakan sebaran ekosistem terumbu karang, 
                         menganalisis potensi daerah penangkapan ikan berdasarkan parameter oseanografi, serta memberikan rekomendasi alat tangkap yang selektif dan efektif untuk mendukung penangkapan berkelanjutan di perairan Pulau Tunda. 
                         Sistem ini juga dilengkapi fitur analisis hasil tangkapan, analisis parameter oseanografi, hubungan antara parameter oseanografi dengan CPUE (Catch Per Unit Effort) serta pemindaian berbasis AI (Artificial Intelligent) untuk identifikasi genus dan tingkat kesegaran ikan.</span>
                 </div>

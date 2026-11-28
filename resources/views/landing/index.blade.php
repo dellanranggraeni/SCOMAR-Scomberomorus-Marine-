@@ -471,6 +471,8 @@
                         <li><a href="#beranda">Beranda</a></li>
                         <li><a href="#pulau-tunda">Tentang Pulau Tunda</a></li>
                         <li><a href="#ikan-tenggiri">Ikan Tenggiri</a></li>
+                        <li><a href="#terumbu-karang">Terumbu Karang</a></li>
+                        <li><a href="#komoditas-makrozoobentos">Makrozoobentos</a></li>
                         <li><a href="#fitur-sistem">Layanan Sistem</a></li>
                     </ul>
                 </div>
